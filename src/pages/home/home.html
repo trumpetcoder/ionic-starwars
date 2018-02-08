@@ -13,4 +13,37 @@
   <p>
     This is Kevin J. My project 4 will be in wordpress/php
   </p>
+
+  <section>
+  <h2>Search for a Character (Search String): {{ name }}</h2>
+    
+    <input [(ngModel)] ='name' type="text" placeholder="Character Name">
+    <input  (click)="findCharacter(name)" type="submit" value="Search">
+
+</section>
+
+<section *ngIf="results">
+    <h2>Search Results</h2>
+    <ul>
+        <li *ngFor="let character of results">
+            <h3>{{character.name}}</h3>
+            <dl>
+                <dt>Birth Year: {{character.birth_year}}</dt>
+                <!-- <dd>{{character.birth_year}}</dd> -->
+                <dt>Eye Color: {{character.eye_color}}</dt>
+                <!-- <dd>{{character.eye_color}}</dd> -->
+                <dt>Hair Color: {{character.hair_color}}</dt>
+                <!-- <dd>{{character.hair_color}}</dd> -->
+                <dt>Gender: {{character.gender}}</dt>
+                <!-- <dd>{{character.gender}}</dd> -->
+                <dt>Height: {{character.height}}</dt>
+                <!-- <dd>{{character.height}}</dd> -->
+                <dt>Mass: {{character.mass}}</dt>
+                <!-- <dd>{{character.mass}}</dd> -->
+                <dt>Skin Color: {{character.skin_color}}</dt>
+                <!-- <dd>{{character.skin_color}}</dd> -->
+            </dl>
+        </li>
+    </ul>
+</section> 
 </ion-content>
